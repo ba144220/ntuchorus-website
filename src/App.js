@@ -1,12 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import About from "./Containers/About/About";
+import Activities from "./Containers/Activities/Activities";
+import ContactUs from "./Containers/ContactUs/ContactUs";
+import Game from "./Containers/Game/Game";
+import Main from "./Containers/Main/Main";
+import Videos from "./Containers/Videos/Videos";
 
 function App() {
-  return (
-    <div className="App">
-      <h1>哈囉，我們是台大合唱團www</h1>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Main />
+            <ContactUs />
+            <About />
+            <Videos />
+            <Activities />
+            <Game />
+        </div>
+    );
 }
 
 export default App;
