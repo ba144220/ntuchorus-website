@@ -7,7 +7,7 @@ const Videos = () => {
             <h1>招生影片(我先亂嵌之後補上）</h1>
             <iframe
                 src="https://www.youtube.com/embed/t-ZQJFwOpjg"
-                frameborder="0"
+                frameBorder="0"
                 allow="fullscreen"
                 title="vid"
             ></iframe>

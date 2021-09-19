@@ -3,7 +3,7 @@ import "./Game.css";
 
 const Game = () => {
     return (
-        <div class="Game">
+        <div className="Game">
             <h1>合唱小遊戲</h1>
         </div>
     );

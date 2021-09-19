@@ -1,0 +1,43 @@
+.info-block {
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    width: 100%;
+}
+.title,
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.title {
+    text-align: center;
+    color: #f9f9f9;
+    background-color: black;
+    width: 60%;
+    animation: SlideIn 2s;
+}
+.text {
+    text-align: center;
+    background-color: #555555;
+    color: #f9f9f9;
+    width: 40%;
+    animation: FadeIn 2s;
+}
+@keyframes FadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes SlideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}

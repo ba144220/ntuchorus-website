@@ -1,3 +1,8 @@
+import React from "react";
+import theme from "./theme";
+import { ThemeProvider } from "@material-ui/core";
+
+import InfoBlock from "./Components/InfoBlock/InfoBlock";
 import About from "./Containers/About/About";
 import Activities from "./Containers/Activities/Activities";
 import ContactUs from "./Containers/ContactUs/ContactUs";
@@ -7,14 +12,15 @@ import Videos from "./Containers/Videos/Videos";
 
 function App() {
     return (
-        <div className="App">
+        <ThemeProvider theme={theme}>
             <Main />
+            <InfoBlock />
             <ContactUs />
             <About />
             <Videos />
             <Activities />
             <Game />
-        </div>
+        </ThemeProvider>
     );
 }
 
