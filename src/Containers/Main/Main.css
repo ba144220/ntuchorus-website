@@ -12,7 +12,7 @@
     background-size: cover;
 }
 .MainPage .Logo {
-    background-image: url("Logo.svg");
+    background-image: url("./Logo.svg");
     background-repeat: no-repeat;
     align-self: center;
     width: 15%;
