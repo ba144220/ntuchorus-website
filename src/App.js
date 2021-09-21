@@ -13,6 +13,7 @@ import Main from "./Containers/Main/Main";
 import Videos from "./Containers/Videos/Videos";
 import Footer from "./Containers/Footer/Footer";
 import VideoCarousel from "./Components/VideoCarousel/VideoCarousel";
+import Carousel from "./Components/Carousel/Carousel";
 
 function App() {
     useEffect(() => {
@@ -23,10 +24,11 @@ function App() {
             <Main />
 
             <InfoBlock title="想了解更多？" subtitle="點選連結進入聊天室，由幹部為您解惑！">
-                <div style={{ height: "50px" }}>a</div>
                 <VideoCarousel />
             </InfoBlock>
-            <InfoBlock left />
+            <InfoBlock left>
+                <Carousel />
+            </InfoBlock>
             <InfoBlock />
             <InfoBlock left />
             <Footer />

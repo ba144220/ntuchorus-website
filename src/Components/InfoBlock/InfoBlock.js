@@ -53,7 +53,7 @@ const useStyle = makeStyles((theme) => ({
         marginBottom: theme.spacing(3),
     },
     test: {
-        border: "solid 1px red",
+        //border: "solid 1px red",
         width: "100%",
         height: "100%",
     },
@@ -73,21 +73,7 @@ const InfoBlock = ({ left, title = "大標題", subtitle = "小標題", children
                     data-aos-delay="500"
                     data-aos-duration="1000"
                 >
-                    {/* {children} */}
-                    <div className={classes.test}>
-                        <iframe
-                            style={{
-                                width: "100%",
-                                aspectRatio: "16/9",
-                                maxHeight: "100%",
-                            }}
-                            src="https://www.youtube.com/embed/7g3j1bayTpI"
-                            title="YouTube video player"
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                        ></iframe>
-                    </div>
+                    {children}
                 </Grid>
             )}
 
