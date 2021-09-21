@@ -6,7 +6,7 @@ const Main = () => {
         <div className="MainPage" id="MainPage">
             <div className="Logo" id="Logo"></div>
 
-            <h1 id="Header">尚未開放，敬請期待</h1>
+            <h1 id="Header">網站尚未開放，敬請期待</h1>
             <p id="Text"></p>
             <div className="ButtonContainer1" id="ButtonContainer1">
                 <button className="Join">試音資訊</button>
