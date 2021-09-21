@@ -1,58 +1,20 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
-import Grid from "@material-ui/core/Grid";
-import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
-
-const useStyle = makeStyles((theme) => ({
-    root: {
-        width: "100%",
-        backgroundColor: "black",
-        color: "white",
-        flexGrow: 1,
-        borderTop: "solid 5px grey",
-    },
-    paper: {
-        padding: theme.spacing(2),
-        textAlign: "center",
-        color: theme.palette.text.secondary,
-    },
-    container: {
-        border: "dotted 2px green",
-    },
-    gridItem: {
-        padding: theme.spacing(4),
-    },
-}));
+import "./Footer.css";
 const Footer = () => {
-    const classes = useStyle();
     return (
-        <div className={classes.root}>
-            <Grid container spacing={0}>
-                <Grid item xs={4} className={classes.gridItem}>
-                    <Container className={classes.container}>
-                        <Typography variant="h5">台大合唱團</Typography>
-                    </Container>
-                </Grid>
-                <Grid item xs={4} className={classes.gridItem}>
-                    <Container className={classes.container}>
-                        <Typography variant="h5">商業合作</Typography>
-
-                        <Typography variant="subtitle1">good.dish.tw@gmail.com</Typography>
-                    </Container>
-                </Grid>
-                <Grid item xs={4} className={classes.gridItem}>
-                    <Container className={classes.container}>
-                        <Typography variant="h5">聯絡資訊</Typography>
-
-                        <Typography variant="subtitle1">Instagram</Typography>
-
-                        <Typography variant="subtitle1">Facebook</Typography>
-                        <Typography variant="subtitle1">官網</Typography>
-                    </Container>
-                </Grid>
-            </Grid>
+        <div className="FootPage">
+            <div className="TagContainer">
+                <a href="https://www.facebook.com/NTUChorus/">
+                    <i className="fa fa-facebook-square" style={{ fontSize: "24px" }}></i>
+                </a>
+                <a href="https://www.instagram.com/ntuchorus/">
+                    <i className="fa fa-instagram" style={{ fontSize: "24px" }}></i>
+                </a>
+                <a href="https://www.youtube.com/user/ntuchorus">
+                    <i className="fa fa-youtube-play" style={{ fontSize: "24px" }}></i>
+                </a>
+            </div>
+            <p>Copyright © 2021 NTUChorus</p>
         </div>
     );
 };

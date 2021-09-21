@@ -17,7 +17,7 @@ function App() {
         <ThemeProvider theme={theme}>
             <Main />
 
-            <InfoBlock
+            {/* <InfoBlock
                 title="想了解更多？"
                 subtitle="點選連結進入聊天室，由幹部為您解惑！"
             ></InfoBlock>
@@ -25,16 +25,8 @@ function App() {
                 <Carousel />
             </InfoBlock>
             <InfoBlock />
-            <InfoBlock left />
+            <InfoBlock left />*/}
             <Footer />
-
-            {/* 
-            <InfoBlock />
-            <ContactUs />
-            <About />
-            <Videos />
-            <Activities />
-            <Game /> */}
         </ThemeProvider>
     );
 }
