@@ -1,8 +1,6 @@
 import React from "react";
 import "./Main.css";
 
-import "./ButtonScript";
-
 const Main = () => {
     return (
         <div class="MainPage" id="MainPage">
