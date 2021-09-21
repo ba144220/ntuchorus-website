@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
+import ChevronRightSharpIcon from "@material-ui/icons/ChevronRightSharp";
+import ChevronLeftSharpIcon from "@material-ui/icons/ChevronLeftSharp";
+
 const useStyle = makeStyles((theme) => ({
     root: {
         backgroundColor: "orange",
@@ -38,30 +41,28 @@ const useStyle = makeStyles((theme) => ({
         position: "absolute",
         bottom: 0,
     },
-    next: {
-        height: "30%",
+
+    side: {
+        height: "50%",
         width: "10%",
         border: "solid 1px purple",
 
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+
         position: "absolute",
-        right: 0,
+
+        transition: "0.5s",
 
         "&:hover": {
             cursor: "pointer",
+            height: "100%",
+            backgroundColor: "rgba(200,200,200,0.5)",
         },
     },
-    prev: {
-        height: "30%",
-        width: "10%",
-        border: "solid 1px blue",
 
-        position: "absolute",
-        left: 0,
-
-        "&:hover": {
-            cursor: "pointer",
-        },
-    },
     test: {
         height: "95%",
         width: "95%",
@@ -72,13 +73,15 @@ const useStyle = makeStyles((theme) => ({
         },
     },
     indicator: {
-        minHeight: "5px",
-        width: "10%",
+        minHeight: "4px",
+        //width: "10%",
         backgroundColor: "grey",
         marginLeft: "2%",
         marginRight: "2%",
 
-        transition: "1s",
+        borderRadius: "2px",
+
+        transition: "0.4s",
 
         "&:hover": {
             backgroundColor: "white",
@@ -95,53 +98,75 @@ const Indicator = ({ number, state, setState }) => {
             onClick={() => {
                 setState(number);
             }}
+            style={{
+                width: number === state ? "12%" : "10%",
+                backgroundColor: number === state ? "silver" : "grey",
+            }}
         ></div>
     );
 };
 
-const Carousel = ({ children }) => {
+const Carousel = ({ children, state, setState }) => {
     const classes = useStyle();
 
-    const [state, setState] = useState(0);
+    const [pause, setPause] = useState(false);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (pause === true) {
+                console.log(pause);
+                return;
+            }
+            setState((state) => (state + 1) % children.length);
+        }, 4000);
+        return () => clearInterval(interval);
+    }, [pause]);
 
     return (
-        <div className={classes.root}>
+        <div
+            className={classes.root}
+            onMouseEnter={() => setPause(true)}
+            onMouseLeave={() => setPause(false)}
+        >
             <div className={classes.content}>
                 <div className={classes.indicatorHolder}>
-                    <Indicator number={0} state={state} setState={setState} />
-                    <Indicator number={1} state={state} setState={setState} />
-                    <Indicator number={2} state={state} setState={setState} />
+                    {children.map((child, i) => (
+                        <Indicator number={i} state={state} setState={setState} key={i} />
+                    ))}
                 </div>
                 <div
-                    className={classes.next}
-                    onClick={() => {
-                        setState((state + 1) % children.length);
-                    }}
+                    className={classes.side}
+                    style={{ right: 0 }}
+                    onClick={() => setState((state) => (state + 1) % children.length)}
                 >
-                    {">"}
+                    <ChevronRightSharpIcon fontSize="large" />
                 </div>
                 <div
-                    className={classes.prev}
+                    className={classes.side}
+                    style={{ left: 0 }}
                     onClick={() => {
                         setState((state - 1 + children.length) % children.length);
                     }}
                 >
-                    {"<"}
+                    <ChevronLeftSharpIcon fontSize="large" />
                 </div>
 
-                {children[state]}
+                {children}
             </div>
         </div>
     );
 };
 
-function Item(props) {
+function Item({ item, state, setState, number }) {
     return (
-        <div style={{ width: "100%", height: "100%", border: "dotted 1px yellow" }}>
+        <div
+            hidden={state != number}
+            style={{ width: "100%", height: "100%", border: "dotted 1px yellow" }}
+        >
             <iframe
                 width="100%"
                 height="100%"
-                src={props.item.src}
+                src={item.src}
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -152,6 +177,8 @@ function Item(props) {
 }
 
 const VideoCarousel = () => {
+    const [state, setState] = useState(0);
+
     const items = [
         {
             title: "那天一個衝動我加入合唱團",
@@ -167,9 +194,9 @@ const VideoCarousel = () => {
         },
     ];
     return (
-        <Carousel>
+        <Carousel state={state} setState={setState}>
             {items.map((item, i) => (
-                <Item key={i} item={item} />
+                <Item number={i} key={i} item={item} state={state} setState={setState} />
             ))}
         </Carousel>
     );
