@@ -6,6 +6,8 @@
     justify-content: center;
     align-items: center;
     margin: auto;
+
+    border-top: solid grey 5px;
 }
 .FootPage .fa-facebook-square {
     color: #ffffff;

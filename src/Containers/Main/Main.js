@@ -6,7 +6,8 @@ import "./ButtonScript";
 const Main = () => {
     return (
         <div class="MainPage" id="MainPage">
-            {/* <div class="Logo" id="Logo"></div> */}
+            <div class="Logo" id="Logo"></div>
+
             <h1 id="Header">尚未開放，敬請期待</h1>
             <p id="Text"></p>
             <div class="ButtonContainer1" id="ButtonContainer1">
@@ -33,7 +34,8 @@ const Main = () => {
                                 <p>現在時間</p>
                                 <p id="Time"></p>
                                 <p id="Service"></p>
-                                {/* <a id="Gather">諮詢服務</a> */}
+
+                                <a id="Gather">諮詢服務</a>
                             </div>
                         </div>
                         <button onclick="AskBack()">返回</button>
