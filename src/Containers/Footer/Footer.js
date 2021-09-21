@@ -18,6 +18,7 @@ const useStyle = makeStyles((theme) => ({
 }));
 
 const Footer = () => {
+    const classes = useStyle();
     return (
         <div className="FootPage">
             <div className="TagContainer">
