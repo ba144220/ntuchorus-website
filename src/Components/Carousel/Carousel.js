@@ -5,32 +5,27 @@ import ChevronRightSharpIcon from "@material-ui/icons/ChevronRightSharp";
 import ChevronLeftSharpIcon from "@material-ui/icons/ChevronLeftSharp";
 
 const useStyle = makeStyles((theme) => ({
-    root: {
-        backgroundColor: "orange",
-        height: "90%",
-        width: "90%",
-
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-    },
-    content: {
-        width: "100%",
-        maxHeight: "80%",
-        aspectRatio: "16/9",
-        border: "solid 1px red",
-
-        position: "relative",
-
+    center: {
         display: "flex",
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
     },
+
+    root: {
+        height: "100%",
+        width: "100%",
+    },
+    content: {
+        width: "90%",
+        maxHeight: "80%",
+        aspectRatio: "4/3",
+
+        position: "relative",
+    },
     indicatorHolder: {
-        height: "5%",
-        border: "solid 1px green",
+        height: "3%",
+
         width: "80%",
 
         display: "flex",
@@ -45,12 +40,6 @@ const useStyle = makeStyles((theme) => ({
     side: {
         height: "50%",
         width: "10%",
-        border: "solid 1px purple",
-
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "center",
-        alignItems: "center",
 
         position: "absolute",
 
@@ -63,15 +52,6 @@ const useStyle = makeStyles((theme) => ({
         },
     },
 
-    test: {
-        height: "95%",
-        width: "95%",
-        backgroundColor: "red",
-
-        "&:hover": {
-            backgroundColor: "darkred",
-        },
-    },
     indicator: {
         minHeight: "4px",
         //width: "10%",
@@ -114,7 +94,6 @@ const Carousel = ({ children, state, setState }) => {
     useEffect(() => {
         const interval = setInterval(() => {
             if (pause === true) {
-                console.log(pause);
                 return;
             }
             setState((state) => (state + 1) % children.length);
@@ -124,25 +103,26 @@ const Carousel = ({ children, state, setState }) => {
 
     return (
         <div
-            className={classes.root}
+            className={`${classes.root} ${classes.center}`}
             onMouseEnter={() => setPause(true)}
             onMouseLeave={() => setPause(false)}
         >
-            <div className={classes.content}>
+            <div className={`${classes.content} ${classes.center}`}>
+                {children}
                 <div className={classes.indicatorHolder}>
                     {children.map((child, i) => (
                         <Indicator number={i} state={state} setState={setState} key={i} />
                     ))}
                 </div>
                 <div
-                    className={classes.side}
+                    className={`${classes.side} ${classes.center}`}
                     style={{ right: 0 }}
                     onClick={() => setState((state) => (state + 1) % children.length)}
                 >
                     <ChevronRightSharpIcon fontSize="large" />
                 </div>
                 <div
-                    className={classes.side}
+                    className={`${classes.side} ${classes.center}`}
                     style={{ left: 0 }}
                     onClick={() => {
                         setState((state - 1 + children.length) % children.length);
@@ -150,56 +130,9 @@ const Carousel = ({ children, state, setState }) => {
                 >
                     <ChevronLeftSharpIcon fontSize="large" />
                 </div>
-
-                {children}
             </div>
         </div>
     );
 };
 
-function Item({ item, state, setState, number }) {
-    return (
-        <div
-            hidden={state != number}
-            style={{ width: "100%", height: "100%", border: "dotted 1px yellow" }}
-        >
-            <iframe
-                width="100%"
-                height="100%"
-                src={item.src}
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-            ></iframe>
-        </div>
-    );
-}
-
-const VideoCarousel = () => {
-    const [state, setState] = useState(0);
-
-    const items = [
-        {
-            title: "那天一個衝動我加入合唱團",
-            src: "https://www.youtube.com/embed/BTQga91HouQ",
-        },
-        {
-            title: "如果明天就是下一生",
-            src: "https://www.youtube.com/embed/AXrPbg7G_UE",
-        },
-        {
-            title: "When you believe",
-            src: "https://www.youtube.com/embed/7g3j1bayTpI",
-        },
-    ];
-    return (
-        <Carousel state={state} setState={setState}>
-            {items.map((item, i) => (
-                <Item number={i} key={i} item={item} state={state} setState={setState} />
-            ))}
-        </Carousel>
-    );
-};
-
-export default VideoCarousel;
+export default Carousel;

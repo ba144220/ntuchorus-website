@@ -1,0 +1,25 @@
+.FootPage {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+
+    border-top: solid grey 5px;
+}
+.FootPage .fa-facebook-square {
+    color: #ffffff;
+}
+.FootPage .fa-youtube-play {
+    color: #ffffff;
+}
+.FootPage .fa-instagram {
+    color: #ffffff;
+}
+.FootPage p {
+    font-family: sans-serif;
+    font-style: italic;
+    color: #333333;
+}

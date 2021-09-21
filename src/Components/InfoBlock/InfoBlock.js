@@ -14,7 +14,7 @@ const useStyle = makeStyles((theme) => ({
         },
         display: "flex",
         flexDirection: "row",
-        minHeight: "400px",
+        minHeight: "500px",
         width: "100vw",
         backgroundColor: "black",
         borderTop: "solid 5px grey",
@@ -36,7 +36,7 @@ const useStyle = makeStyles((theme) => ({
         justifyContent: "center",
         alignItems: "center",
         textAlign: "center",
-        backgroundColor: "blueviolet",
+        //backgroundColor: "blueviolet",
         color: "#f9f9f9",
     },
     title: {
