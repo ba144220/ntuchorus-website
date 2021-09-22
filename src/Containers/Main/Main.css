@@ -53,8 +53,9 @@ html {
     background-color: #cb4042;
 }
 .MainPage .Join:hover {
-    animation: JoinAni 1s;
+    animation: JoinAni 0.6s;
     animation-fill-mode: forwards;
+    cursor: pointer;
 }
 @keyframes JoinAni {
     100% {
@@ -65,8 +66,9 @@ html {
     background-color: #f9bf45;
 }
 .MainPage .Ask:hover {
-    animation: JoinAni 2s;
+    animation: JoinAni 1s;
     animation-fill-mode: forwards;
+    cursor: pointer;
 }
 
 .MainPage .JoinBoxContainer {
@@ -149,6 +151,7 @@ html {
 .MainPage .JoinBoxContainer .JoinBack .JoinBox button:hover {
     animation: JoinAni 1s;
     animation-fill-mode: forwards;
+    cursor: pointer;
 }
 
 .MainPage .AskBoxContainer {
@@ -239,6 +242,7 @@ html {
 .MainPage .AskBoxContainer .AskBack .AskBox button:hover {
     animation: JoinAni 1s;
     animation-fill-mode: forwards;
+    cursor: pointer;
 }
 @keyframes AskCardC {
     0% {

@@ -35,7 +35,12 @@ const Main = () => {
                                     <p id="Time"></p>
                                     <p id="Service"></p>
 
-                                    <a id="Gather">諮詢服務</a>
+                                    <a
+                                        id="Gather"
+                                        href="https://gather.town/app/UymIyY1JY0kJXkve/Welcome_to_NTUChorus"
+                                    >
+                                        諮詢服務
+                                    </a>
                                 </div>
                             </div>
                             <button onClick={() => AskBack()}>返回</button>
