@@ -7,7 +7,7 @@ import Grid from "@material-ui/core/Grid";
 const useStyle = makeStyles((theme) => ({
     root: {
         [theme.breakpoints.down("sm")]: {
-            backgroundColor: "purple",
+            //backgroundColor: "purple",
         },
         display: "flex",
         flexDirection: "row",
