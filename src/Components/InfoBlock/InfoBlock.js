@@ -6,15 +6,18 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 const useStyle = makeStyles((theme) => ({
     root: {
-        [theme.breakpoints.down("sm")]: {
-            //backgroundColor: "purple",
-        },
         display: "flex",
         flexDirection: "row",
         minHeight: "500px",
         width: "100vw",
         backgroundColor: "black",
         borderTop: "solid 5px grey",
+    },
+    left: {
+        [theme.breakpoints.down("sm")]: {
+            //backgroundColor: "purple",
+            flexDirection: "column-reverse",
+        },
     },
     text: {
         display: "flex",
@@ -59,7 +62,7 @@ const InfoBlock = ({ left, title = "大標題", subtitle = "小標題", children
     const classes = useStyle();
 
     return (
-        <Grid container className={classes.root}>
+        <Grid container className={left ? `${classes.root} ${classes.left}` : classes.root}>
             {left && (
                 <Grid
                     item
