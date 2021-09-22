@@ -38,6 +38,7 @@ const Main = () => {
                                     <a
                                         id="Gather"
                                         href="https://gather.town/app/UymIyY1JY0kJXkve/Welcome_to_NTUChorus"
+                                        style={{ textDecoration: "none", color: "black" }}
                                     >
                                         諮詢服務
                                     </a>

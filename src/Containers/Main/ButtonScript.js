@@ -40,28 +40,17 @@ function DisplayDate() {
 }
 function Service() {
     let d = new Date();
-    if (d.getFullYear() == 2021) {
-        if (d.getMonth() == 9) {
-            if (d.getDay() > 21 && d.getDay() < 27 && d.getDay() != 24) {
-                if (d.getHours() > 19 && d.getHours() < 22) {
-                    document.getElementById("Service").innerHTML = "營業中";
-                    document.getElementById("Gather").style.display = "unset";
-                } else {
-                    document.getElementById("Service").innerHTML = "休息中";
-                    document.getElementById("Gather").style.display = "none";
-                }
-            } else {
-                document.getElementById("Service").innerHTML = "休息中";
-                document.getElementById("Gather").style.display = "none";
-            }
+    if (d.getDay() != 24) {
+        if (d.getHours() > 18 && d.getHours() < 23) {
+            document.getElementById("Service").innerHTML = "營業中";
+            document.getElementById("Gather").style.display = "unset";
         } else {
-            document.getElementById("Service").innerHTML = "休息中";
             document.getElementById("Gather").style.display = "none";
+            document.getElementById("Service").innerHTML = "休息中";
         }
     } else {
-        document.getElementById("Service").innerHTML = "休息中";
         document.getElementById("Gather").style.display = "none";
+        document.getElementById("Service").innerHTML = "休息中";
     }
 }
-
 export { ClickJoin, ClickAsk, JoinBack, AskBack };
