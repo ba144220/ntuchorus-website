@@ -8,8 +8,8 @@ const Main = () => {
             <div className="MainPage" id="MainPage">
                 <div className="Logo" id="Logo"></div>
 
-                <h1 id="Header">網站尚未開放，敬請期待</h1>
-                <p id="Text"></p>
+                <h1 id="Header">口唱心合，快樂高歌</h1>
+                <p id="Text">台大合唱團，熱情招聲中</p>
                 <div className="ButtonContainer1" id="ButtonContainer1">
                     <button className="Join" onClick={ClickJoin}>
                         試音資訊
