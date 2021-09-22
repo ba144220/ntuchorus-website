@@ -2,8 +2,6 @@ import { makeStyles, Typography } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import React from "react";
 
-import "./Button1.css";
-
 const useStyle = makeStyles((theme) => ({
     button: {
         transition: "0.4s",
@@ -21,24 +19,31 @@ const useStyle = makeStyles((theme) => ({
                 //content: "'add'",
                 //color: "grey",
                 //color: "#b83a3c",
+                color: theme.palette.primary.main,
             },
         },
     },
     text: {
-        //transition: "0.4s",
+        transition: "0.4s",
         margin: theme.spacing(1),
+        color: theme.palette.secondary.main,
     },
 }));
 
-const Button1 = ({ onClick }) => {
+const Ask = () => {
     const classes = useStyle();
     return (
-        <Button className={classes.button} color="primary" variant="outlined" onClick={onClick}>
-            <Typography variant="h5" className={classes.text}>
-                查看招生試音資訊
-            </Typography>
+        <Button className={classes.button} color="primary" variant="outlined">
+            <a
+                href="https://gather.town/app/UymIyY1JY0kJXkve/Welcome_to_NTUChorus"
+                style={{ textDecoration: "none" }}
+            >
+                <Typography variant="h5" className={classes.text}>
+                    點擊前往 Gather Town
+                </Typography>
+            </a>
         </Button>
     );
 };
 
-export default Button1;
+export default Ask;

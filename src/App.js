@@ -11,8 +11,11 @@ import VideoCarousel from "./Components/Videos/Videos";
 import Video from "./Video/Video";
 import Button1 from "./Components/Buttons/Button1";
 import ImagesCarousel from "./Components/Images/Images";
+import Game from "./Components/Game/Game";
+import Ask from "./Components/Ask/Ask";
 
 function ClickJoin() {
+    window.scrollTo(0, 0);
     document.getElementById("JoinBoxContainer").style.display = "flex";
     document.getElementById("JoinBoxContainer").style.justifyContent = "center";
     document.getElementById("JoinBoxContainer").style.alignItems = "center";
@@ -42,18 +45,17 @@ function App() {
                 <ImagesCarousel />
             </InfoBlock>
 
-            <InfoBlock
-                left
-                title="什麼時候可以線上諮詢？"
-                subtitle="現任幹部線上為您解惑"
-            ></InfoBlock>
+            <InfoBlock left title="什麼時候可以線上諮詢？" subtitle="現任幹部線上為您解惑">
+                <Ask />
+            </InfoBlock>
 
             <InfoBlock title="試音資訊" subtitle="馬上成為台大合唱團的一份子！">
                 <Button1 onClick={ClickJoin} />
             </InfoBlock>
 
-            <InfoBlock left title="合唱小遊戲" subtitle="YouTube闖關回答正確答案拿獎品！" />
-
+            <InfoBlock left title="合唱小遊戲" subtitle="YouTube闖關回答正確答案拿獎品！">
+                <Game />
+            </InfoBlock>
             <Footer />
         </ThemeProvider>
     );
