@@ -45,7 +45,11 @@ function App() {
                 <ImagesCarousel />
             </InfoBlock>
 
-            <InfoBlock left title="什麼時候可以線上諮詢？" subtitle="現任幹部線上為您解惑">
+            <InfoBlock
+                left
+                title="什麼時候可以線上諮詢？"
+                subtitle="9/22（三）~9/26（六）19:00~22:00 現任幹部線上為您解惑"
+            >
                 <Ask />
             </InfoBlock>
 
