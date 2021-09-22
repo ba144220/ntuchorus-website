@@ -23,7 +23,8 @@ export default createTheme({
     // typography: {
     //     fontFamily: "Roboto, Helvetica, Arial, PingFangTC-Semibold, PingFang TC",
     // },
-    // palette: {
-    //     primary: { main: "#8aae4a" },
-    // },
+    palette: {
+        primary: { main: "#b83a3c" },
+        secondary:{main:'#e7ae3a'}
+    },
 });

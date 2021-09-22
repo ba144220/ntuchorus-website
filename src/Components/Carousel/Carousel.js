@@ -19,7 +19,7 @@ const useStyle = makeStyles((theme) => ({
     content: {
         width: "90%",
         maxHeight: "80%",
-        aspectRatio: "4/3",
+        aspectRatio: "14/9",
 
         position: "relative",
     },
@@ -86,7 +86,7 @@ const Indicator = ({ number, state, setState }) => {
     );
 };
 
-const Carousel = ({ children, state, setState }) => {
+const Carousel = ({ children, state, setState, aspectRatio }) => {
     const classes = useStyle();
 
     const [pause, setPause] = useState(false);

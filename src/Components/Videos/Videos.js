@@ -53,7 +53,7 @@ const VideoCarousel = () => {
         },
     ];
     return (
-        <Carousel state={state} setState={setState}>
+        <Carousel state={state} setState={setState} aspectRatio="16/9">
             {items.map((item, i) => (
                 <Item number={i} key={i} item={item} state={state} setState={setState} />
             ))}
