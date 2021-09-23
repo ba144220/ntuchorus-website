@@ -57,7 +57,7 @@ function App() {
                 <Button1 onClick={ClickJoin} />
             </InfoBlock>
 
-            <InfoBlock left title="合唱小遊戲" subtitle="YouTube闖關回答正確答案拿獎品！">
+            <InfoBlock left title="合唱聽力小遊戲" subtitle="YouTube闖關回答正確答案拿獎品！">
                 <Game />
             </InfoBlock>
             <Footer />

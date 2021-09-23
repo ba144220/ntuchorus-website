@@ -41,7 +41,7 @@ function DisplayDate() {
 function Service() {
     let d = new Date();
     if (d.getDay() != 24) {
-        if (d.getHours() > 18 && d.getHours() < 23) {
+        if (d.getHours() > 18 && d.getHours() < 22) {
             document.getElementById("Service").innerHTML = "營業中";
             document.getElementById("Gather").style.display = "unset";
         } else {
