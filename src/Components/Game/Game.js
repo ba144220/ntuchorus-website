@@ -36,7 +36,7 @@ const Game = () => {
     return (
         <>
             <img src="https://i.imgur.com/6r7I85u.gif" width="80%" height="60%" />
-            <Button className={classes.button} color="primary" variant="outlined" disabled>
+            <Button className={classes.button} color="primary" variant="outlined">
                 <a href="https://youtu.be/kpGeUBN4vJU" style={{ textDecoration: "none" }}>
                     <Typography variant="h5" className={classes.text}>
                         點擊前往小遊戲！
